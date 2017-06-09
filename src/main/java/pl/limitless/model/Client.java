@@ -19,23 +19,36 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @NotEmpty(message = "Please enter your name")
     private String name;
+
     @NotEmpty(message = "Please enter your last name")
     private String lastName;
+
     private String profileImage;
+
     private String clientId;
+
     @Email(message = "*Please enter a valid Email")
     @NotEmpty(message = "*Please enter an email")
     private String email;
+
     @Length(min = 8, message = "*Your password must have at least 8 characters")
     @NotEmpty(message = "*Please enter your password")
     @Transient
     private String password;
+
     @Length(min = 11, max = 11, message = "Please enter a valid pesel number")
     private String pesel;
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<ClientDisabilitiesDetails> clientDisabilitiesDetails;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Flight> flights;
+
+    private LOG_ACTIVITY log_activity;
 
     public Client() {
     }
