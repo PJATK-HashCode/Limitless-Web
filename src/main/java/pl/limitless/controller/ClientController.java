@@ -11,6 +11,8 @@ import pl.limitless.service.ClientService;
 
 import javax.validation.Valid;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 /**
  * @author Lelental on 09.06.2017.
  */
@@ -45,10 +47,15 @@ public class ClientController {
         if (clientPesel != null) {
             bindingResult.rejectValue("pesel", "error.client", "There is already a client register with" +
                     "that data.");
+        }else if(!PeselValidator.checkPesel(client.getPesel())){
+        bindingResult.rejectValue("pesel", "error.client", "Wrong pesel number");
         }
+
         if(bindingResult.hasErrors()){
             modelAndView.setViewName("registerClient");
         }else{
+            String password = client.getPassword();
+            client.setPassword(DigestUtils.shalHex(password))
             clientService.saveClient(client);
             modelAndView.addObject("succesMessage", "Client has been registered");
             modelAndView.addObject("client", new Client());
