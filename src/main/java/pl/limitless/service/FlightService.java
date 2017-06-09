@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import pl.limitless.dao.IFlightRepository;
 import pl.limitless.model.Flight;
 
+import java.util.List;
+
 /**
  * @author Lelental on 09.06.2017.
  */
@@ -24,12 +26,12 @@ public class FlightService implements IFlightService {
     }
 
     @Override
-    public Flight findByAirportFrom(String airportFrom) {
+    public List<Flight> findByAirportFrom(String airportFrom) {
         return flightRepository.findByAirportFrom(airportFrom);
     }
 
     @Override
-    public Flight findByAirportFromAndAirportTo(String airportFrom, String airportTo) {
+    public List<Flight> findByAirportFromAndAirportTo(String airportFrom, String airportTo) {
         return flightRepository.findByAirportFromAndAirportTo(airportFrom, airportTo);
     }
 
@@ -51,6 +53,21 @@ public class FlightService implements IFlightService {
     @Override
     public Flight findByFlightNumber(String flightNumber) {
         return flightRepository.findByFlightNumber(flightNumber);
+    }
+
+    @Override
+    public List<Flight> findByAirportTo(String airportTo) {
+        return flightRepository.findByAirportTo(airportTo);
+    }
+
+    @Override
+    public List<Flight> findByStartDate(String startDate) {
+        return flightRepository.findByStartDate(startDate);
+    }
+
+    @Override
+    public List<Flight> findByLandDate(String landDate) {
+        return flightRepository.findByLandDate(landDate);
     }
 
     @Override
