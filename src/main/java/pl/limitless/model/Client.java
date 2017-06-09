@@ -1,6 +1,7 @@
 package pl.limitless.model;
 
 import lombok.Data;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -23,7 +24,6 @@ public class Client {
     @NotEmpty(message = "Please enter your last name")
     private String lastName;
     private String profileImage;
-    
     private String clientId;
     @Email(message = "*Please enter a valid Email")
     @NotEmpty(message = "*Please enter an email")
@@ -37,4 +37,18 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL)
     private List<ClientDisabilitiesDetails> clientDisabilitiesDetails;
 
+    public Client() {
+    }
+
+    public Client(String name, String lastName, String email, String password, String pesel) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = DigestUtils.sha1Hex(password);
+        this.pesel = pesel;
+    }
+
+    public void setPassword(String password) {
+        this.password =  DigestUtils.sha1Hex(password);
+    }
 }
