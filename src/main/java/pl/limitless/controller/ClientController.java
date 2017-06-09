@@ -20,7 +20,7 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 @Controller
 public class ClientController {
-
+/*
     @Autowired
     private ClientService clientService;
 
@@ -34,7 +34,7 @@ public class ClientController {
 
 
         return "login";
-    }
+    }*/
 /*
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView register() {
