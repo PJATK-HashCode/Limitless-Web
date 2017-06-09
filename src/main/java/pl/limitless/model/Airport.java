@@ -17,5 +17,5 @@ public class Airport {
     private long id;
     private String name;
     @OneToMany
-    private List<Staff> staff;
+    private Staff staff;
 }
