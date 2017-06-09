@@ -17,6 +17,7 @@ import javax.validation.Valid;
 @Controller
 public class ClientController {
 
+/*
     @Autowired
     private ClientService clientService;
 
@@ -55,5 +56,6 @@ public class ClientController {
         }
         return modelAndView;
     }
+*/
 
 }
