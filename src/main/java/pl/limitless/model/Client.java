@@ -50,6 +50,7 @@ public class Client {
     }
 
     public void setPassword(String password) {
-        this.password =  DigestUtils.sha1Hex(password);
+        String encryptedPass = DigestUtils.sha1Hex(password);;
+        this.password =encryptedPass;
     }
 }

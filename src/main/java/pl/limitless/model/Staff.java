@@ -32,13 +32,15 @@ public class Staff {
     }
 
     public Staff(String password, String name, String surname, String staffId) {
-        this.password = DigestUtils.sha1Hex(password);
+        String encryptedPass = DigestUtils.sha1Hex(password);
+        this.password = encryptedPass;
         this.name = name;
         this.surname = surname;
         this.staffId = staffId;
     }
 
     public void setPassword(String password) {
-        this.password = DigestUtils.sha1Hex(password);
+        String encryptedPass = DigestUtils.sha1Hex(password);;
+        this.password =encryptedPass;
     }
 }
