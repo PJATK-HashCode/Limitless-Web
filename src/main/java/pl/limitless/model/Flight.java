@@ -29,4 +29,6 @@ public class Flight {
     private String airportFrom;
     private String airportTo;
     private String flightId;
+    private LOG_ACTIVITY log_activity;
+
 }
