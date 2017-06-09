@@ -25,7 +25,7 @@ public class HomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String home(ModelMap model)
     {
-        return "index";
+        return "register";
     }
 
 }
