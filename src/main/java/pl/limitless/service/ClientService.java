@@ -18,7 +18,6 @@ public class ClientService implements IClientService {
         this.clientRepository = clientRepository;
     }
 
-
     @Override
     public Client findClientByClientId(String clientId) {
         return clientRepository.findClientByClientId(clientId);
