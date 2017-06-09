@@ -2,6 +2,7 @@ package pl.limitless.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,17 +21,21 @@ import org.apache.commons.codec.digest.DigestUtils;
 @Controller
 public class ClientController {
 
-/*
     @Autowired
     private ClientService clientService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login");
-        return modelAndView;
-    }
+    public String login(Model model, String error, String logout) {
+        if (error != null)
+            model.addAttribute("error", "Your username and password is invalid.");
 
+        if (logout != null)
+            model.addAttribute("message", "You have been logged out successfully.");
+
+
+        return "login";
+    }
+/*
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView register() {
         ModelAndView modelAndView = new ModelAndView();
