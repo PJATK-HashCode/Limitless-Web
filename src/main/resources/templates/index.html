@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-                     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-
-<head>
-    <title>Demo</title>
-
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>usejj
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css" th:href="@{/semantic/dist/semantic.min.css}" />
     <script src="../static/semantic/dist/components/visibility.js" th:href="@{/semantic/dist/components/visibility.js}"></script>
@@ -14,14 +15,26 @@
     <script src="../static/semantic/dist/semantic.min.js" th:href="@{/semantic/dist/semantic.min.js}"></script>
 
 
+
 <body>
 
-<div id="myheader">
-    <script>$('#myheader').load('header.html');</script>
-</div>
-<div class="wrapper">
-
+<div class="ui large top fixed inverted menu transition">
+    <div class="ui container">
+        <a class="item" href="">Home</a>
+        <a class="item" href="personal_data.html">Profile</a>
+        <a class="item" href="userflights.html">Your flights</a>
+        <a class="item" href="flights.html">All flights</a>
+        <a class="item" href="adminflights.html">List of Flights</a>
+        <div class="right menu">
+            <div class="item">
+                <a class="ui button green" href="login.html">Log in</a>
+            </div>
+            <div class="item">
+                <a class="ui primary button" href="register.html">Sign Up</a>
+            </div>
         </div>
+    </div>
+</div>
 
 </body>
 </html>
