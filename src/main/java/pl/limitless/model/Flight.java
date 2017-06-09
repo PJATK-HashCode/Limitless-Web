@@ -26,8 +26,8 @@ public class Flight {
     private String startDate;
     @NotEmpty(message = "Please enter land date")
     private String landDate;
-    private String airportFrom;
-    private String airportTo;
+    private Airport airportFrom;
+    private Airport airportTo;
     private String flightId;
     private LOG_ACTIVITY log_activity;
 
