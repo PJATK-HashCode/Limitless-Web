@@ -19,6 +19,7 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 @Controller
 public class ClientController {
+/*
 
 
     @Autowired
@@ -65,5 +66,6 @@ public class ClientController {
         return modelAndView;
     }
 
+*/
 
 }
