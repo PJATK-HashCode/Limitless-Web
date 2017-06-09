@@ -1,11 +1,11 @@
 package pl.limitless.model;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author Lelental on 09.06.2017.
@@ -17,13 +17,23 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotEmpty(message = "Please enter your name")
     private String name;
+    @NotEmpty(message = "Please enter your last name")
     private String lastName;
     private String profileImage;
+    
     private String clientId;
+    @Email(message = "*Please enter a valid Email")
+    @NotEmpty(message = "*Please enter an email")
     private String email;
+    @Length(min = 8, message = "*Your password must have at least 8 characters")
+    @NotEmpty(message = "*Please enter your password")
+    @Transient
     private String password;
+    @Length(min = 11, max = 11, message = "Please enter a valid pesel number")
     private String pesel;
+    @OneToMany(cascade = CascadeType.ALL)
     private ClientDisabilitiesDetails clientDisabilitiesDetails;
 
 }

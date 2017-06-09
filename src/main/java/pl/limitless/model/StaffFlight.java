@@ -10,14 +10,14 @@ import java.util.List;
  */
 @Data
 @Entity
-public class EmployeesFlight {
+public class StaffFlight {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToMany
-    private List<Employee> employees;
+    private List<Staff> staff;
 
 
 }

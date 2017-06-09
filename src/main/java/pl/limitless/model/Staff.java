@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Data
 @Entity
-public class Employee {
+public class Staff {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +19,12 @@ public class Employee {
     private String password;
     private String name;
     private String surname;
-    private String personelId;
+    private String staffId;
     @ManyToOne
     private Airport airports;
 
     @ManyToMany
-    private List<EmployeesFlight> acceptedEmployeesFlights;
+    private List<StaffFlight> acceptedStaffFlights;
 
 
 
