@@ -1,7 +1,9 @@
 package pl.limitless.controller;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +13,7 @@ import pl.limitless.model.Client;
 import pl.limitless.model.Staff;
 import pl.limitless.security.PeselValidator;
 import pl.limitless.service.StaffService;
+import sun.plugin.liveconnect.SecurityContextHelper;
 
 import javax.validation.Valid;
 
@@ -27,7 +30,7 @@ public class StaffController {
     @RequestMapping(value = "/staff/login", method = RequestMethod.GET)
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("stafftLogin");
+        modelAndView.setViewName("staffLogin");
         return modelAndView;
     }
 
@@ -58,4 +61,7 @@ public class StaffController {
         }
         return modelAndView;
     }
+
+
+
 }
