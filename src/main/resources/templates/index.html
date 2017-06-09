@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 
-    <link rel="stylesheet" type="text/css" href="../public/CSS/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/semantic.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="../public/CSS/semantic.min.js"></script>
-    <script src="../public/CSS/components/visibility.js"></script>
-    <script src="../public/CSS/components/sidebar.js"></script>
-    <script src="../public/CSS/components/transition.js"></script>
+    <script src="/css/semantic.min.js"></script>
+    <script src="/css/components/visibility.js"></script>
+    <script src="/css/components/sidebar.js"></script>
+    <script src="/css/components/transition.js"></script>
 
     <style>
         .headerslot{
@@ -27,7 +27,10 @@
     </style>
 
 </head>
-
+<body>
+<div id="myheader">
+    <script>$('#myheader').load('header.html');</script>
+</div>
 <div class="wrapper">
     <form class="ui form headerslot field">
 
