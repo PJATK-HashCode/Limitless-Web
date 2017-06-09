@@ -1,11 +1,11 @@
 package pl.limitless.model;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Lelental on 09.06.2017.
@@ -17,7 +17,13 @@ public class ClientDisabilitiesDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotEmpty(message = "Please enter information about your disabilities")
     private String disabilityInformation;
+    @ManyToOne
+    private Client client;
+    @Length(min = 2, max = 16)
+    @NotEmpty(message = "Please enter a name for cart name")
+    private String cartName;
     private String medicinesInformation;
     private boolean guideDog;
     private boolean isGuideDogTravelWithYou;
