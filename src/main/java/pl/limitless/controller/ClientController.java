@@ -20,7 +20,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 @Controller
 public class ClientController {
 
-
+/*
     @Autowired
     private ClientService clientService;
 
@@ -61,7 +61,7 @@ public class ClientController {
             modelAndView.setViewName("register");
         }
         return modelAndView;
-    }
+    }*/
 
 
 }
