@@ -30,4 +30,19 @@ public class ClientDisabilitiesDetails {
     private boolean wheelChair;
     private boolean foldingWheelChair;
     private boolean nonFoldingWheelChair;
+
+    public ClientDisabilitiesDetails() {
+    }
+
+    public ClientDisabilitiesDetails(boolean guideDog, boolean isGuideDogTravelWithYou,
+                                     boolean wheelChair, boolean foldingWheelChair, boolean nonFoldingWheelChair,
+                                     String cartName, String disabilityInformation) {
+        this.guideDog = guideDog;
+        this.isGuideDogTravelWithYou = isGuideDogTravelWithYou;
+        this.wheelChair = wheelChair;
+        this.foldingWheelChair = foldingWheelChair;
+        this.nonFoldingWheelChair = nonFoldingWheelChair;
+        this.cartName = cartName;
+        this.disabilityInformation = disabilityInformation;
+    }
 }

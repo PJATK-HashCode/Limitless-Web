@@ -52,8 +52,8 @@ public class ClientRestController {
     }
 
     @RequestMapping(value = "/rest/client/{clientId}/disabilities", method = RequestMethod.GET)
-    public List<ClientDisabilitiesDetails> getClientDisabilitiesDetails(@PathVariable String clientId){
-        if(clientRepository.findClientByClientId(clientId) != null){
+    public List<ClientDisabilitiesDetails> getClientDisabilitiesDetails(@PathVariable String clientId) {
+        if (clientRepository.findClientByClientId(clientId) != null) {
             Client client = clientRepository.findClientByClientId(clientId);
             return client.getClientDisabilitiesDetails();
         }
@@ -81,15 +81,20 @@ public class ClientRestController {
         return null;
     }
 
+
+    /**
+     * Test rest query
+     */
     @RequestMapping(value = "rest/client/new", method = RequestMethod.POST)
     public Client setFirstClient() {
         Client client = new Client("Jan", "Kowalski",
                 "jankowalksi@gmail.com", "haslo1239", "95031010513");
         client.setClientId("foo");
         List<ClientDisabilitiesDetails> clientDisabilitiesDetailsList = new ArrayList<>();
-        ClientDisabilitiesDetails clientDisabilitiesDetails = new ClientDisabilitiesDetails();
-        clientDisabilitiesDetails.setCartName("Karta1");
-        clientDisabilitiesDetails.setDisabilityInformation("info");
+        ClientDisabilitiesDetails clientDisabilitiesDetails
+                = new ClientDisabilitiesDetails(true, true, false,
+                false, true,
+                "Card1", "movement disability, amblyopia");
         clientDisabilitiesDetailsList.add(clientDisabilitiesDetails);
         client.setClientDisabilitiesDetails(clientDisabilitiesDetailsList);
         return clientRepository.save(client);
