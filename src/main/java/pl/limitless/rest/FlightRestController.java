@@ -50,7 +50,9 @@ public class FlightRestController {
     }
 
     @RequestMapping(value = "/rest/flight/{flightLandingDate}", method = RequestMethod.GET)
-    public List<Flight> getByFlightLandingDate(@PathVariable String fligtLandingDate) {
-        return flightRepository.findByLandDate(fligtLandingDate);
+    public List<Flight> getByFlightLandingDate(@PathVariable String flightLandingDate) {
+        return flightRepository.findByLandDate(flightLandingDate);
     }
+
+
 }

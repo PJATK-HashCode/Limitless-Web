@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.limitless.dao.IClientRepository;
 import pl.limitless.model.Client;
 import pl.limitless.model.ClientDisabilitiesDetails;
+import pl.limitless.model.Flight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,14 @@ public class ClientRestController {
     @RequestMapping(value = "rest/client/{clientId}", method = RequestMethod.GET)
     public Client getByClientId(@PathVariable String clientId){
         return clientRepository.findClientByClientId(clientId);
+    }
+
+    @RequestMapping(value = "/rest/client/{clientId}/{flightId}", method = RequestMethod.PUT)
+    public Flight updateClientArrivalStatus(@PathVariable String cliendId, @PathVariable String flightId) {
+        if(clientRepository.findClientByClientId(cliendId)!= null){
+
+        }
+        return null;
     }
 
     @RequestMapping(value = "rest/client/new", method = RequestMethod.POST)

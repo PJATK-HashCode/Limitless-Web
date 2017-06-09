@@ -2,6 +2,7 @@ package pl.limitless.model;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
+import pl.limitless.rest.FlightRestController;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,9 +27,10 @@ public class Flight {
     private String startDate;
     @NotEmpty(message = "Please enter land date")
     private String landDate;
-    private Airport airportFrom;
-    private Airport airportTo;
+    private String airportFrom;
+    private String airportTo;
     private String flightId;
     private LOG_ACTIVITY log_activity;
+    private String clientArrivalDate;
 
 }

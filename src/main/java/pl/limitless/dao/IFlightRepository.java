@@ -29,4 +29,5 @@ public interface IFlightRepository extends JpaRepository<Flight, Long> {
     List<Flight> findByStartDate(String startDate);
 
     List<Flight> findByLandDate(String landDate);
+
 }
