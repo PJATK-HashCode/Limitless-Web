@@ -3,7 +3,6 @@ package pl.limitless.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.limitless.dao.IFlightRepository;
-import pl.limitless.model.Airport;
 import pl.limitless.model.Flight;
 
 import java.util.List;
@@ -22,17 +21,17 @@ public class FlightService implements IFlightService {
     }
 
     @Override
-    public Flight findAllByAirportFrom(Airport airportFrom) {
+    public Flight findAllByAirportFrom(String airportFrom) {
         return flightRepository.findAllByAirportFrom(airportFrom);
     }
 
     @Override
-    public List<Flight> findByAirportFrom(Airport airportFrom) {
+    public List<Flight> findByAirportFrom(String airportFrom) {
         return flightRepository.findByAirportFrom(airportFrom);
     }
 
     @Override
-    public List<Flight> findByAirportFromAndAirportTo(Airport airportFrom, Airport airportTo) {
+    public List<Flight> findByAirportFromAndAirportTo(String airportFrom, String airportTo) {
         return flightRepository.findByAirportFromAndAirportTo(airportFrom, airportTo);
     }
 
@@ -57,7 +56,7 @@ public class FlightService implements IFlightService {
     }
 
     @Override
-    public List<Flight> findByAirportTo(Airport airportTo) {
+    public List<Flight> findByAirportTo(String airportTo) {
         return flightRepository.findByAirportTo(airportTo);
     }
 

@@ -1,6 +1,5 @@
 package pl.limitless.service;
 
-import pl.limitless.model.Airport;
 import pl.limitless.model.Flight;
 
 import java.util.List;
@@ -10,13 +9,13 @@ import java.util.List;
  */
 public interface IFlightService {
 
-    Flight findAllByAirportFrom(Airport airportFrom);
+    Flight findAllByAirportFrom(String airportFrom);
 
-    List<Flight> findByAirportFrom(Airport airportFrom);
+    List<Flight> findByAirportFrom(String airportFrom);
 
-    List<Flight> findByAirportFromAndAirportTo(Airport airportFrom, Airport airportTo);
+    List<Flight> findByAirportFromAndAirportTo(String airportFrom, String airportTo);
 
-    List<Flight> findByAirportTo(Airport airportTo);
+    List<Flight> findByAirportTo(String airportTo);
 
     Flight findByFlightId(String flightId);
 
