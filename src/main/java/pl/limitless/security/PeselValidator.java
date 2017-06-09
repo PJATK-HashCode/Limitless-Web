@@ -5,7 +5,7 @@ package pl.limitless.security;
  */
 public class PeselValidator {
 
-    static boolean checkPesel(String pesel) {
+    public static boolean checkPesel(String pesel) {
 
         int weight[] = {1, 3, 7, 9, 1, 3, 7, 9, 1, 3};
         int sum = 0;
