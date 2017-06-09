@@ -51,6 +51,15 @@ public class ClientRestController {
         return null;
     }
 
+    @RequestMapping(value = "/rest/client/{clientId}/disabilities")
+    public List<ClientDisabilitiesDetails> getClientDisabilitiesDetails(@PathVariable String clientId){
+        if(clientRepository.findClientByClientId(clientId) != null){
+            Client client = clientRepository.findClientByClientId(clientId);
+            return client.getClientDisabilitiesDetails();
+        }
+        return null;
+    }
+
     @RequestMapping(value = "/rest/client/{clientId}/{flightId}/{logActivity}/{dateOfArrival}",
             method = RequestMethod.PUT)
     public Flight updateClientArrivalStatusToIWillBe(@PathVariable String clientId,
