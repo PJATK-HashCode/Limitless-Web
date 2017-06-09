@@ -12,18 +12,16 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
-public class Client {
+public class ClientDisabilitiesDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
-    private String lastName;
-    private String profileImage;
-    private String clientId;
-    private String email;
-    private String password;
-    private String pesel;
-    private ClientDisabilitiesDetails clientDisabilitiesDetails;
-
+    private String disabilityInformation;
+    private String medicinesInformation;
+    private boolean guideDog;
+    private boolean isGuideDogTravelWithYou;
+    private boolean wheelChair;
+    private boolean foldingWheelChair;
+    private boolean nonFoldingWheelChair;
 }
