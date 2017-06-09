@@ -12,7 +12,10 @@ import pl.limitless.model.Client;
 public interface IClientRepository extends JpaRepository<Client, Long> {
 
     Client findClientByClientId(String clientId);
+
     Client findClientByPesel(String pesel);
+
     Client findClientByNameAndLastName(String name, String lastName);
+
     Client findClientByEmail(String email);
 }
