@@ -1,6 +1,7 @@
 package pl.limitless.model;
 
 import lombok.Data;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.persistence.*;
 import java.util.List;
@@ -27,4 +28,19 @@ public class Staff {
     private List<StaffFlight> acceptedStaffFlights;
 
 
+    public Staff() {
+    }
+
+    public Staff(String password, String name, String surname, String staffId) {
+        String encryptedPass = DigestUtils.sha1Hex(password);
+        this.password = encryptedPass;
+        this.name = name;
+        this.surname = surname;
+        this.staffId = staffId;
+    }
+
+    public void setPassword(String password) {
+        String encryptedPass = DigestUtils.sha1Hex(password);;
+        this.password =encryptedPass;
+    }
 }

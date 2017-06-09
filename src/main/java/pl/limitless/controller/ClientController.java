@@ -56,10 +56,8 @@ public class ClientController {
         if(bindingResult.hasErrors()){
             modelAndView.setViewName("registerClient");
         }else{
-            String password = client.getPassword();
-            client.setPassword(DigestUtils.sha1Hex(password));
             clientService.saveClient(client);
-            modelAndView.addObject("succesMessage", "Client has been registered");
+            modelAndView.addObject("successMessage", "Client has been registered");
             modelAndView.addObject("client", new Client());
             modelAndView.setViewName("register");
         }
