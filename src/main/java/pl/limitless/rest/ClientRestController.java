@@ -51,7 +51,7 @@ public class ClientRestController {
         return null;
     }
 
-    @RequestMapping(value = "/rest/client/{clientId}/disabilities")
+    @RequestMapping(value = "/rest/client/{clientId}/disabilities", method = RequestMethod.GET)
     public List<ClientDisabilitiesDetails> getClientDisabilitiesDetails(@PathVariable String clientId){
         if(clientRepository.findClientByClientId(clientId) != null){
             Client client = clientRepository.findClientByClientId(clientId);
@@ -85,6 +85,7 @@ public class ClientRestController {
     public Client setFirstClient() {
         Client client = new Client("Jan", "Kowalski",
                 "jankowalksi@gmail.com", "haslo1239", "95031010513");
+        client.setClientId("foo");
         List<ClientDisabilitiesDetails> clientDisabilitiesDetailsList = new ArrayList<>();
         ClientDisabilitiesDetails clientDisabilitiesDetails = new ClientDisabilitiesDetails();
         clientDisabilitiesDetails.setCartName("Karta1");
