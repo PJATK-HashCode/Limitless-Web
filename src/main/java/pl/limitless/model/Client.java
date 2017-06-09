@@ -2,10 +2,7 @@ package pl.limitless.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author Lelental on 09.06.2017.
@@ -24,6 +21,7 @@ public class Client {
     private String email;
     private String password;
     private String pesel;
+    @OneToOne
     private ClientDisabilitiesDetails clientDisabilitiesDetails;
 
 }
