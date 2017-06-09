@@ -1,4 +1,4 @@
-package pl.limitless.validator;
+package pl.limitless.security;
 
 /**
  * @author Lelental on 09.06.2017.
