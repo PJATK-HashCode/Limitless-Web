@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Lelental on 09.06.2017.
@@ -34,6 +35,6 @@ public class Client {
     @Length(min = 11, max = 11, message = "Please enter a valid pesel number")
     private String pesel;
     @OneToMany(cascade = CascadeType.ALL)
-    private ClientDisabilitiesDetails clientDisabilitiesDetails;
+    private List<ClientDisabilitiesDetails> clientDisabilitiesDetails;
 
 }
