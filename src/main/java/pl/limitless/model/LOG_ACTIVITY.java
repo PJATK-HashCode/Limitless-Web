@@ -5,5 +5,5 @@ package pl.limitless.model;
  */
 public enum LOG_ACTIVITY {
 
-    IM_HERE,WILL_BE_AT,DECLINE
+    IM_HERE, WILL_BE_AT, DECLINE
 }

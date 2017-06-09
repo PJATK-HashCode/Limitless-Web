@@ -1,6 +1,7 @@
 package pl.limitless.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import pl.limitless.model.Airport;
 import pl.limitless.model.Flight;
 
 import java.util.List;
@@ -10,15 +11,15 @@ import java.util.List;
  */
 public interface IFlightRepository extends JpaRepository<Flight, Long> {
 
-    Flight findAllByAirportFrom(String airportFrom);
+    Flight findAllByAirportFrom(Airport airportFrom);
 
-    List<Flight> findByAirportFrom(String airportFrom);
+    List<Flight> findByAirportFrom(Airport airportFrom);
 
-    List<Flight> findByAirportFromAndAirportTo(String airportFrom, String airportTo);
+    List<Flight> findByAirportFromAndAirportTo(Airport airportFrom, Airport airportTo);
 
     Flight findByFlightId(String flightId);
 
-    List<Flight> findByAirportTo(String airportTo);
+    List<Flight> findByAirportTo(Airport airportTo);
 
     Flight findByFlightNameAndFlightNumber(String flightName, String flightNumber);
 

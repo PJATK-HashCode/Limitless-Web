@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import pl.limitless.dao.IFlightRepository;
+import pl.limitless.model.Airport;
 import pl.limitless.model.Flight;
 
 import java.util.List;
@@ -25,12 +26,12 @@ public class FlightRestController {
     }
 
     @RequestMapping(value = "/rest/flight/{airportFrom}", method = RequestMethod.GET)
-    public List<Flight> getByAirportFrom(@PathVariable String airportFrom) {
+    public List<Flight> getByAirportFrom(@PathVariable Airport airportFrom) {
         return flightRepository.findByAirportFrom(airportFrom);
     }
 
     @RequestMapping(value = "/rest/flight/{aurPortTo}", method = RequestMethod.GET)
-    public List<Flight> getByAirportTo(@PathVariable String airportTo) {
+    public List<Flight> getByAirportTo(@PathVariable Airport airportTo) {
         return flightRepository.findByAirportTo(airportTo);
     }
 
