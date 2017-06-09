@@ -26,7 +26,7 @@ public class Flight {
     private Airport airportFrom;
     private Airport airportTo;
     private String flightId;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private LOG_ACTIVITY log_activity;
 
 }
