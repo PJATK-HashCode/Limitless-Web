@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import pl.limitless.model.Client;
+import pl.limitless.security.PeselValidator;
 import pl.limitless.service.ClientService;
 
 import javax.validation.Valid;
@@ -19,7 +20,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 @Controller
 public class ClientController {
 
-/*
+
     @Autowired
     private ClientService clientService;
 
@@ -55,7 +56,7 @@ public class ClientController {
             modelAndView.setViewName("registerClient");
         }else{
             String password = client.getPassword();
-            client.setPassword(DigestUtils.shalHex(password))
+            client.setPassword(DigestUtils.sha1Hex(password));
             clientService.saveClient(client);
             modelAndView.addObject("succesMessage", "Client has been registered");
             modelAndView.addObject("client", new Client());
@@ -63,6 +64,6 @@ public class ClientController {
         }
         return modelAndView;
     }
-*/
+
 
 }

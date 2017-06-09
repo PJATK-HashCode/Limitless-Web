@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author Lelental on 09.06.2017.
  */
-public class PasswordEcnryptionTest {
+public class PasswordEncryptionTest {
 
     @Test
     public void test_encrypt() throws NoSuchAlgorithmException {
