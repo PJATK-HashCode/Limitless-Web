@@ -81,6 +81,8 @@ public class ClientRestController {
         return null;
     }
 
+
+    /**  Test rest query*/
     @RequestMapping(value = "rest/client/new", method = RequestMethod.POST)
     public Client setFirstClient() {
         Client client = new Client("Jan", "Kowalski",
@@ -88,8 +90,11 @@ public class ClientRestController {
         client.setClientId("foo");
         List<ClientDisabilitiesDetails> clientDisabilitiesDetailsList = new ArrayList<>();
         ClientDisabilitiesDetails clientDisabilitiesDetails = new ClientDisabilitiesDetails();
-        clientDisabilitiesDetails.setCartName("Karta1");
-        clientDisabilitiesDetails.setDisabilityInformation("info");
+        clientDisabilitiesDetails.setCartName("Card1");
+        clientDisabilitiesDetails.setFoldingWheelChair(true);
+        clientDisabilitiesDetails.setGuideDog(true);
+        clientDisabilitiesDetails.setGuideDogTravelWithYou(true);
+        clientDisabilitiesDetails.setDisabilityInformation("movement disability, amblyopia");
         clientDisabilitiesDetailsList.add(clientDisabilitiesDetails);
         client.setClientDisabilitiesDetails(clientDisabilitiesDetailsList);
         return clientRepository.save(client);
