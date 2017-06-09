@@ -19,7 +19,7 @@ import javax.validation.Valid;
  */
 @Controller
 public class StaffController {
-
+/*
     @Autowired
     private StaffService staffService;
 
@@ -57,5 +57,5 @@ public class StaffController {
             modelAndView.setViewName("register");
         }
         return modelAndView;
-    }
+    }*/
 }
