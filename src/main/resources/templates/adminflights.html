@@ -21,6 +21,54 @@
         .wrapper {
             width: 700px;
             margin: 0 auto;
+
+        }
+        body {font-family: "Lato", sans-serif;}
+
+        /* Style the tab */
+        div.tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        div.tab button {
+            cursor: pointer;
+            display: inline-block;
+            min-height: 1em;
+            outline: none;
+            border: none;
+            vertical-align: baseline;
+            background: #E0E1E2 none;
+            color: rgba(0, 0, 0, 0.6);
+            font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            padding: 0.78571429em 1.5em 0.78571429em;
+            text-transform: none;
+            text-shadow: none;
+            font-weight: bold;
+            line-height: 1em;
+            font-style: normal;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* Change background color of buttons on hover */
+        div.tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        div.tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
         }
     </style>
 
@@ -31,12 +79,125 @@
 </div>
 <div class="wrapper">
     <form class="ui form headerslot field">
-
-
-
-
     </form>
+
+
+<p><h1>Admin panel:</h1></p>
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Pending')" id="defaultOpen">Pending</button>
+    <button class="tablinks" onclick="openCity(event, 'Accepted')">Accepted</button>
+    <button class="tablinks" onclick="openCity(event, 'History')">History</button>
 </div>
+
+<div id="Pending" class="tabcontent">
+    <table class="ui striped selectable celled table" style="margin-top: 30px;">
+        <thead>
+        <tr>
+            <th>todo</th>
+            <th>todo</th>
+            <th>todo</th>
+            <th>todo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>John Lilki</td>
+            <td>September 14, 2013</td>
+            <td>jhlilk22@yahoo.com</td>
+            <td>
+                <button class="mini ui green button">
+                    Accept
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Jamie Harington</td>
+            <td>January 11, 2014</td>
+            <td>jamieharingonton@yahoo.com</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Jill Lewis</td>
+            <td>May 11, 2014</td>
+            <td>jilsewris22@yahoo.com</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>John Lilki</td>
+            <td>September 14, 2013</td>
+            <td>jhlilk22@yahoo.com</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>John Lilki</td>
+            <td>September 14, 2013</td>
+            <td>jhlilk22@yahoo.com</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Jamie Harington</td>
+            <td>January 11, 2014</td>
+            <td>jamieharingonton@yahoo.com</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Jill Lewis</td>
+            <td>May 11, 2014</td>
+            <td>jilsewris22@yahoo.com</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>John Lilki</td>
+            <td>September 14, 2013</td>
+            <td>jhlilk22@yahoo.com</td>
+            <td>No</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+
+<div id="Accepted" class="tabcontent">
+
+
+
+
+
+</div>
+
+<div id="History" class="tabcontent">
+
+
+
+
+
+</div>
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+</div>
+
+
 
 </body>
 </html>
