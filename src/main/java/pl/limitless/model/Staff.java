@@ -22,7 +22,7 @@ public class Staff {
     private String surname;
     private String staffId;
     @ManyToOne
-    private Airport airports;
+    private List<Airport> airports;
 
     @ManyToMany
     private List<StaffFlight> acceptedStaffFlights;
