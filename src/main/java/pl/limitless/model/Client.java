@@ -48,8 +48,6 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Flight> flights;
 
-    private LOG_ACTIVITY log_activity;
-
     public Client() {
     }
 
