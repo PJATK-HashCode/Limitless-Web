@@ -14,7 +14,7 @@ public class Staff {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  long id;
+    private long id;
 
     private String password;
     private String name;
@@ -25,7 +25,6 @@ public class Staff {
 
     @ManyToMany
     private List<StaffFlight> acceptedStaffFlights;
-
 
 
 }
