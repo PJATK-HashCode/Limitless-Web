@@ -19,29 +19,28 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 @Controller
 public class ClientController {
-/*
 
 
     @Autowired
     private ClientService clientService;
 
-    @RequestMapping(value = "/client/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("clientLogin");
+        modelAndView.setViewName("login");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/client/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView register() {
         ModelAndView modelAndView = new ModelAndView();
         Client client = new Client();
         modelAndView.addObject("client", client);
-        modelAndView.setViewName("registerClient");
+        modelAndView.setViewName("register");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/client/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView createNewClient(@Valid Client client, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
         Client clientPesel = clientService.findClientByPesel(client.getPesel());
@@ -64,6 +63,5 @@ public class ClientController {
         return modelAndView;
     }
 
-*/
 
 }
