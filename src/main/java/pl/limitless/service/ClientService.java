@@ -11,8 +11,12 @@ import pl.limitless.model.Client;
 @Service("clientService")
 public class ClientService implements IClientService {
 
+    private final IClientRepository clientRepository;
+
     @Autowired
-    private IClientRepository clientRepository;
+    public ClientService(IClientRepository clientRepository) {
+        this.clientRepository = clientRepository;
+    }
 
 
     @Override
