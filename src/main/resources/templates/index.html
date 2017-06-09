@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+                     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 <head>
     <title>Demo</title>
 
-    <link rel="stylesheet" type="text/css" href="../static/css/semantic.min.css" th:href="@{/semantic/dist/semantic.min.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css" th:href="@{/semantic/dist/semantic.min.css}" />
 
-
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.1.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+    <script src="../static/semantic/dist/semantic.min.js" th:href="@{/semantic/dist/semantic.min.js}"></script>
 </head>
 
 <body>
