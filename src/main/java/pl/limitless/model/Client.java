@@ -44,7 +44,8 @@ public class Client {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
-        this.password = DigestUtils.sha1Hex(password);
+        String encryptedPass = DigestUtils.sha1Hex(password);
+        this.password = encryptedPass;
         this.pesel = pesel;
     }
 
