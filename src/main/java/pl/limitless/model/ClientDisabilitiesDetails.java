@@ -4,10 +4,7 @@ import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author Lelental on 09.06.2017.
@@ -21,6 +18,8 @@ public class ClientDisabilitiesDetails {
     private long id;
     @NotEmpty(message = "Please enter information about your disabilities")
     private String disabilityInformation;
+    @ManyToOne
+    private Client client;
     private String medicinesInformation;
     private boolean guideDog;
     private boolean isGuideDogTravelWithYou;

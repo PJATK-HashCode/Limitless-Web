@@ -39,9 +39,9 @@ public class ClientController {
     @RequestMapping(value = "/client/register", method = RequestMethod.POST)
     public ModelAndView createNewClient(@Valid Client client, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
-        Client clientExists = clientService.findClientByPesel(client.getPesel());
+        Client clientPesel = clientService.findClientByPesel(client.getPesel());
 
-        if (clientExists != null) {
+        if (clientPesel != null) {
             bindingResult.rejectValue("pesel", "error.client", "There is already a client register with" +
                     "that data.");
         }
