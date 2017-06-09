@@ -9,6 +9,7 @@ import pl.limitless.dao.IClientRepository;
 import pl.limitless.model.Client;
 import pl.limitless.model.ClientDisabilitiesDetails;
 import pl.limitless.model.Flight;
+import pl.limitless.model.LOG_ACTIVITY;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,22 +29,53 @@ public class ClientRestController {
     }
 
     @RequestMapping(value = "rest/client/{clientId}", method = RequestMethod.GET)
-    public Client getByClientId(@PathVariable String clientId){
+    public Client getByClientId(@PathVariable String clientId) {
         return clientRepository.findClientByClientId(clientId);
     }
 
-    @RequestMapping(value = "/rest/client/{clientId}/{flightId}", method = RequestMethod.PUT)
-    public Flight updateClientArrivalStatus(@PathVariable String cliendId, @PathVariable String flightId) {
-        if(clientRepository.findClientByClientId(cliendId)!= null){
+    @RequestMapping(value = "/rest/client/{clientId}/{flightId}/{logActivity}", method = RequestMethod.PUT)
+    public Flight updateClientArrivalStatusToImHereOrDecline(@PathVariable String clientId,
+                                                             @PathVariable String flightId,
+                                                             @PathVariable LOG_ACTIVITY logActivity) {
+        if (clientRepository.findClientByClientId(clientId) != null) {
+            Client client = clientRepository.findClientByClientId(clientId);
+            if (client.getFlights() != null) {
+                for (Flight flight : client.getFlights()) {
+                    if (flight.getFlightId().equalsIgnoreCase(flightId)) {
+                        flight.setLog_activity(logActivity);
+                        return flight;
+                    }
+                }
+            }
+        }
+        return null;
+    }
 
+    @RequestMapping(value = "/rest/client/{clientId}/{flightId}/{logActivity}/{dateOfArrival}",
+            method = RequestMethod.PUT)
+    public Flight updateClientArrivalStatusToIWillBe(@PathVariable String clientId,
+                                                     @PathVariable String flightId,
+                                                     @PathVariable LOG_ACTIVITY logActivity,
+                                                     @PathVariable String dateOfArrival) {
+        if (clientRepository.findClientByClientId(clientId) != null) {
+            Client client = clientRepository.findClientByClientId(clientId);
+            if (client.getFlights() != null) {
+                for (Flight flight : client.getFlights()) {
+                    if (flight.getFlightId().equalsIgnoreCase(flightId)) {
+                        flight.setLog_activity(logActivity);
+                        flight.setClientArrivalDate(dateOfArrival);
+                        return flight;
+                    }
+                }
+            }
         }
         return null;
     }
 
     @RequestMapping(value = "rest/client/new", method = RequestMethod.POST)
-    public Client setFirstClient(){
-        Client client = new Client("Jan","Kowalski",
-                "jankowalksi@gmail.com","haslo1239","95031010513");
+    public Client setFirstClient() {
+        Client client = new Client("Jan", "Kowalski",
+                "jankowalksi@gmail.com", "haslo1239", "95031010513");
         List<ClientDisabilitiesDetails> clientDisabilitiesDetailsList = new ArrayList<>();
         ClientDisabilitiesDetails clientDisabilitiesDetails = new ClientDisabilitiesDetails();
         clientDisabilitiesDetails.setCartName("Karta1");
