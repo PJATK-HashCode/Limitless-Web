@@ -1,4 +1,4 @@
-package pl.limitless.validator;
+package pl.limitless.security;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
