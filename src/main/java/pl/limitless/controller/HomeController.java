@@ -16,6 +16,7 @@ import java.util.List;
 /**
  * Created by Kuba on 09.06.2017.
  */
+
 @Controller
 @RequestMapping("/")
 public class HomeController {
