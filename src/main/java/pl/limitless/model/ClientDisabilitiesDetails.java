@@ -21,6 +21,9 @@ public class ClientDisabilitiesDetails {
     private String disabilityInformation;
     @ManyToOne
     private Client client;
+    @Length(min = 2, max = 16)
+    @NotEmpty(message = "Please enter a name for cart name")
+    private String cartName;
     private String medicinesInformation;
     private boolean guideDog;
     private boolean isGuideDogTravelWithYou;

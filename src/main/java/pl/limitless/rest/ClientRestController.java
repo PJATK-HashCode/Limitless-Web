@@ -33,13 +33,12 @@ public class ClientRestController {
 
     @RequestMapping(value = "rest/client/new", method = RequestMethod.POST)
     public Client setFirstClient(){
-        Client client = new Client();
-        client.setClientId("12312asda");
-        client.setEmail("22@wewqe.pl");
-        client.setName("Jan");
-        client.setPesel("1111111111111");
+        Client client = new Client("Jan","Kowalski",
+                "jankowalksi@gmail.com","haslo1239","95031010513");
         List<ClientDisabilitiesDetails> clientDisabilitiesDetailsList = new ArrayList<>();
         ClientDisabilitiesDetails clientDisabilitiesDetails = new ClientDisabilitiesDetails();
+        clientDisabilitiesDetails.setCartName("Karta1");
+        clientDisabilitiesDetails.setDisabilityInformation("info");
         clientDisabilitiesDetailsList.add(clientDisabilitiesDetails);
         client.setClientDisabilitiesDetails(clientDisabilitiesDetailsList);
         return clientRepository.save(client);
