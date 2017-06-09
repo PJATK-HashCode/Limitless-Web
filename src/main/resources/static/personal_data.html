@@ -13,9 +13,134 @@
     <script src="CSS/components/sidebar.js"></script>
     <script src="CSS/components/transition.js"></script>
 
+    <style>
+        .headerslot{
+            margin-top: 100px;
+        }
+        .wrapper {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        img {
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .imageplaceholder {
+            width: 300%;
+            height: 200px;
+
+            float: left;
+            margin: 3px;
+            padding: 3px;
+        }
+
+    </style>
 
 </head>
 <body>
+<div id="myheader">
+    <script>$('#myheader').load('header.html');</script>
+</div>
+
+
+
+<div class="wrapper">
+    <form class="ui form headerslot field">
+
+        <div class="wrapper">
+            <form class="ui form headerslot field">
+
+                <div class="ui two column grid">
+                    <div class="sixteen wide column">
+                        <h1>TODO imie nazwisko</h1>
+                        <h3>Your profile.</h3>
+                    </div>
+
+                    <div class="five column row">
+
+                        <div class="imageplaceholder five wide column left floated">
+                            <div class="ui medium bordered fluid image">
+                                <img src="testimage.jpg">
+                            </div>
+                        </div>
+
+                        <div class="ten wide column">
+
+
+                            <table class="ui definition inverted selectable table" border=1>
+                                <script>
+                                    document.querySelector('table').addEventListener('click', function(evt) {
+                                        var o = evt.target;
+
+                                        if (o.tagName === 'TD') {
+                                            o.setAttribute('value', o.innerHTML);
+                                            o.innerHTML = '<input type="text" value="' + o.innerHTML + '">' +
+                                                    '<button class="cancel ui inverted red button right floated">Cancel</button>' +
+                                                    '<button class="save ui inverted green button right floated">Save</button>';
+
+                                            o.querySelector('input').focus();
+                                        } else if (o.className === 'save') {
+                                            o.parentNode.innerHTML = o.parentNode.querySelector('input').value;
+                                        } else if (o.className === 'cancel') {
+                                            o.parentNode.innerHTML = o.parentNode.getAttribute('value');
+                                        }
+                                    });
+
+                                </script>
+
+                                <tr>
+                                    <th style="padding-left: 20px">Name</th>
+                                    <td>TODO NAME</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Surname</th>
+                                    <td>TODO SURNAME</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Email Address</th>
+                                    <td>TODO ADDRESS</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Birthday</th>
+                                    <td>TODO BIRTHDAY</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Pesel</th>
+                                    <td>TODO PESEL</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">BLANK</th>
+                                    <td>Blank</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">BLANK</th>
+                                    <td>Blank</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">BLANK</th>
+                                    <td>Blank</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">BLANK</th>
+                                    <td>Blank</td>
+                                </tr>
+
+                            </table>
+
+                            <div class="ui divider"></div>
+                            <div class="ui orange inverted button" data-tooltip="Click on your data to change it!" data-position="right center">
+                                Change your settings
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                </form>
+            </div>
+            </form>
+        </div>
 
 </body>
 </html>
