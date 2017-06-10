@@ -30,19 +30,19 @@ public class ClientDisabilitiesDetails {
     private boolean wheelChair;
     private boolean foldingWheelChair;
     private boolean nonFoldingWheelChair;
+    private boolean guideIsNeeded;
 
     public ClientDisabilitiesDetails() {
     }
 
-    public ClientDisabilitiesDetails(boolean guideDog, boolean isGuideDogTravelWithYou,
-                                     boolean wheelChair, boolean foldingWheelChair, boolean nonFoldingWheelChair,
-                                     String cartName, String disabilityInformation) {
+    public ClientDisabilitiesDetails(boolean guideDog, boolean isGuideDogTravelWithYou, boolean guideIsNeeded,
+                                     String cartName, String disabilityInformation,
+                                     String medicinesInformation) {
         this.guideDog = guideDog;
         this.isGuideDogTravelWithYou = isGuideDogTravelWithYou;
-        this.wheelChair = wheelChair;
-        this.foldingWheelChair = foldingWheelChair;
-        this.nonFoldingWheelChair = nonFoldingWheelChair;
         this.cartName = cartName;
+        this.guideIsNeeded = guideIsNeeded;
         this.disabilityInformation = disabilityInformation;
+        this.medicinesInformation = medicinesInformation;
     }
 }
