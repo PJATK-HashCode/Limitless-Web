@@ -92,9 +92,9 @@ public class ClientRestController {
         client.setClientId("foo");
         List<ClientDisabilitiesDetails> clientDisabilitiesDetailsList = new ArrayList<>();
         ClientDisabilitiesDetails clientDisabilitiesDetails
-                = new ClientDisabilitiesDetails(true, true, false,
-                false, true,
-                "Card1", "movement disability, amblyopia");
+                = new ClientDisabilitiesDetails(true, true,true,
+                "To London", "BLind person with dog assistant, always with guide",
+                "paracetamol at 12pm and 16pm");
         clientDisabilitiesDetailsList.add(clientDisabilitiesDetails);
         client.setClientDisabilitiesDetails(clientDisabilitiesDetailsList);
         return clientRepository.save(client);
