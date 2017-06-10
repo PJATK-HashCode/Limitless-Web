@@ -43,6 +43,7 @@
             </h2>
             <div class="four column row">
                 <div class="ten wide column" style="width: 500px;">
+                    <form action="#" th:action="@{register}" method="post" th:object="${clientForm}" >
                     <div class="field input">
                         <label>Name</label>
                         <label>
@@ -81,6 +82,7 @@
                     </div>
 
                     <button class="ui inverted green button" type="submit">Create an account</button>
+                    </form>
                 </div>
             </div>
 

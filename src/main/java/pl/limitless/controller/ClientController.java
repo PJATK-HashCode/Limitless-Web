@@ -31,7 +31,7 @@ public class ClientController {
     @Autowired
     private SecurityServiceImpl securityService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
@@ -46,14 +46,14 @@ public class ClientController {
 
 
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "register", method = RequestMethod.GET)
     public String register(Model model) {
         model.addAttribute("clientForm",new Client());
 
         return "register";
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "register", method = RequestMethod.POST)
     public String createNewClient(@ModelAttribute("clientForm") Client clientForm, BindingResult bindingResult, Model model) {
 
         clientValidator.validate(clientForm,bindingResult);
