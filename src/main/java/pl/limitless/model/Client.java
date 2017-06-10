@@ -15,7 +15,7 @@ import java.util.Set;
  */
 @Data
 @Entity
-public class Client  {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Client  {
     private String name;
 
     @NotEmpty(message = "Please enter your last name")
-    private String surname;
+    private String lastName;
 
     private String profileImage;
 
@@ -56,9 +56,9 @@ public class Client  {
     public Client() {
     }
 
-    public Client(String name, String surname, String email, String password, String pesel) {
+    public Client(String name, String lastName, String email, String password, String pesel) {
         this.name = name;
-        this.surname = surname;
+        this.lastName = lastName;
         this.email = email;
         String encryptedPass = DigestUtils.sha1Hex(password);
         this.password = encryptedPass;
