@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import pl.limitless.dao.IClientRepository;
 import pl.limitless.model.Client;
 import pl.limitless.security.ClientValidator;
 import pl.limitless.security.PeselValidator;
@@ -25,13 +26,13 @@ import pl.limitless.service.SecurityServiceImpl;
 @Controller
 public class ClientController {
     @Autowired
-    private ClientService clientService;
+    private IClientRepository clientRepository;
     @Autowired
     private ClientValidator clientValidator;
     @Autowired
     private SecurityServiceImpl securityService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
@@ -46,22 +47,22 @@ public class ClientController {
 
 
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "register", method = RequestMethod.GET)
     public String register(Model model) {
         model.addAttribute("clientForm",new Client());
 
         return "register";
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "register", method = RequestMethod.POST)
     public String createNewClient(@ModelAttribute("clientForm") Client clientForm, BindingResult bindingResult, Model model) {
 
-        clientValidator.validate(clientForm,bindingResult);
+        //clientValidator.validate(clientForm,bindingResult);
 
         if (bindingResult.hasErrors()){
-            return "registser";
+            return "register";
         }
-        clientService.saveClient(clientForm);
+        clientRepository.save(clientForm);
 
         securityService.autologin(clientForm.getEmail(),clientForm.getPassword());
 

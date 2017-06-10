@@ -13,15 +13,6 @@
     <script src="../static/semantic/dist/components/transition.js" th:src="@{/semantic/dist/components/transition.js}"></script>
     <script src="../static/semantic/dist/semantic.min.js" th:src="@{/semantic/dist/semantic.min.js}"></script>
 
-    <style>
-        .headerslot{
-            margin-top: 100px;
-        }
-        .wrapper {
-            width: 700px;
-            margin: 0 auto;
-        }
-    </style>
 
 </head>
 <body>
@@ -43,44 +34,40 @@
             </h2>
             <div class="four column row">
                 <div class="ten wide column" style="width: 500px;">
+                    <form action="#" th:action="@{/register}"  th:object="${clientForm}" method="post">
                     <div class="field input">
                         <label>Name</label>
                         <label>
-                            <input type="text" name="regName">
+                            <input type="text" name="regName" th:field="*{name}"/>
                         </label>
                     </div>
                     <div class="field input">
                         <label>Surname</label>
                         <label>
-                            <input type="text" name="regSurname">
+                            <input type="text" th:field="*{lastName}"/>
                         </label>
                     </div>
                     <div class="field">
                         <label>Email Address</label>
                         <label>
-                            <input type="email" name="regEmail">
-                        </label>
-                    </div>
-                    <div class="field">
-                        <label>Birthday</label>
-                        <label>
-                            <input type="text" name="regBirthday">
+                            <input type="email" th:field="*{email}"/>
                         </label>
                     </div>
                     <div class="field">
                         <label>Pesel</label>
                         <label>
-                            <input type="number" name="regPesel">
+                            <input type="number" name="pesel" th:field="*{pesel}"/>
                         </label>
                     </div>
                     <div class="field">
                         <label>Password</label>
                         <label>
-                            <input type="password" name="regPassword">
+                            <input type="password" name="regPassword" th:field="*{password}"/>
                         </label>
                     </div>
 
                     <button class="ui inverted green button" type="submit">Create an account</button>
+                    </form>
                 </div>
             </div>
 
