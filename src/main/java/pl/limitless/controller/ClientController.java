@@ -4,25 +4,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import pl.limitless.model.Client;
+import pl.limitless.security.ClientValidator;
 import pl.limitless.security.PeselValidator;
 import pl.limitless.service.ClientService;
 
 import javax.validation.Valid;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import pl.limitless.service.ISecurityService;
+import pl.limitless.service.SecurityServiceImpl;
 
 /**
  * @author Lelental on 09.06.2017.
  */
 @Controller
 public class ClientController {
-/*
     @Autowired
     private ClientService clientService;
+    @Autowired
+    private ClientValidator clientValidator;
+    @Autowired
+    private SecurityServiceImpl securityService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -34,39 +41,33 @@ public class ClientController {
 
 
         return "login";
-    }*/
-/*
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ModelAndView register() {
-        ModelAndView modelAndView = new ModelAndView();
-        Client client = new Client();
-        modelAndView.addObject("client", client);
-        modelAndView.setViewName("register");
-        return modelAndView;
+    }
+
+
+
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(Model model) {
+        model.addAttribute("clientForm",new Client());
+
+        return "register";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ModelAndView createNewClient(@Valid Client client, BindingResult bindingResult) {
-        ModelAndView modelAndView = new ModelAndView();
-        Client clientPesel = clientService.findClientByPesel(client.getPesel());
+    public String createNewClient(@ModelAttribute("clientForm") Client clientForm, BindingResult bindingResult, Model model) {
 
-        if (clientPesel != null) {
-            bindingResult.rejectValue("pesel", "error.client", "There is already a client register with" +
-                    "that data.");
-        }else if(!PeselValidator.checkPesel(client.getPesel())){
-        bindingResult.rejectValue("pesel", "error.client", "Wrong pesel number");
-        }
+        clientValidator.validate(clientForm,bindingResult);
 
-        if(bindingResult.hasErrors()){
-            modelAndView.setViewName("registerClient");
-        }else{
-            clientService.saveClient(client);
-            modelAndView.addObject("successMessage", "Client has been registered");
-            modelAndView.addObject("client", new Client());
-            modelAndView.setViewName("register");
+        if (bindingResult.hasErrors()){
+            return "registser";
         }
-        return modelAndView;
-    }*/
+        clientService.saveClient(clientForm);
+
+        securityService.autologin(clientForm.getEmail(),clientForm.getPassword());
+
+        return "redirect:/index";
+    }
+
 
 
 }
