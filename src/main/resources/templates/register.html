@@ -13,15 +13,6 @@
     <script src="../static/semantic/dist/components/transition.js" th:src="@{/semantic/dist/components/transition.js}"></script>
     <script src="../static/semantic/dist/semantic.min.js" th:src="@{/semantic/dist/semantic.min.js}"></script>
 
-    <style>
-        .headerslot{
-            margin-top: 100px;
-        }
-        .wrapper {
-            width: 700px;
-            margin: 0 auto;
-        }
-    </style>
 
 </head>
 <body>
@@ -43,7 +34,7 @@
             </h2>
             <div class="four column row">
                 <div class="ten wide column" style="width: 500px;">
-                    <form action="#" th:action="@{register}" method="post" th:object="${clientForm}" >
+                    <form action="/register" th:action="@{/register}" method="post" th:object="${clientForm}" >
                     <div class="field input">
                         <label>Name</label>
                         <label>
