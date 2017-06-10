@@ -47,37 +47,31 @@
                     <div class="field input">
                         <label>Name</label>
                         <label>
-                            <input type="text" name="regName">
+                            <input type="text" name="regName" th:field="*{name}">
                         </label>
                     </div>
                     <div class="field input">
                         <label>Surname</label>
                         <label>
-                            <input type="text" name="regSurname">
+                            <input type="text" th:field="*{surname}">
                         </label>
                     </div>
                     <div class="field">
                         <label>Email Address</label>
                         <label>
-                            <input type="email" name="regEmail">
-                        </label>
-                    </div>
-                    <div class="field">
-                        <label>Birthday</label>
-                        <label>
-                            <input type="text" name="regBirthday">
+                            <input type="email" th:field="*{email}">
                         </label>
                     </div>
                     <div class="field">
                         <label>Pesel</label>
                         <label>
-                            <input type="number" name="regPesel">
+                            <input type="number" name="pesel" th:field="*{pesel}">
                         </label>
                     </div>
                     <div class="field">
                         <label>Password</label>
                         <label>
-                            <input type="password" name="regPassword">
+                            <input type="password" name="regPassword" th:field="*{password}">
                         </label>
                     </div>
 

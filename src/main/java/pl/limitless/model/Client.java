@@ -25,7 +25,7 @@ public class Client  {
     private String name;
 
     @NotEmpty(message = "Please enter your last name")
-    private String lastName;
+    private String surname;
 
     private String profileImage;
 
@@ -56,9 +56,9 @@ public class Client  {
     public Client() {
     }
 
-    public Client(String name, String lastName, String email, String password, String pesel) {
+    public Client(String name, String surname, String email, String password, String pesel) {
         this.name = name;
-        this.lastName = lastName;
+        this.surname = surname;
         this.email = email;
         String encryptedPass = DigestUtils.sha1Hex(password);
         this.password = encryptedPass;
