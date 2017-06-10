@@ -29,6 +29,8 @@ public class Flight {
     private String flightId;
     @Enumerated(EnumType.STRING)
     private LOG_ACTIVITY log_activity;
+    @Enumerated(EnumType.STRING)
+    private LOG_ACTIVITY_STAFF log_activity_staff;
     private String clientArrivalDate;
 
 }
