@@ -24,4 +24,10 @@ public class FlightController {
         model.addAttribute("flights", new Flight());
         return "adminflights";
     }
+
+    @RequestMapping(value = "/userflights", method = RequestMethod.GET)
+    public String userflights(Model model){
+        model.addAttribute("flights", new Flight());
+        return "userflights";
+    }
 }

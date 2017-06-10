@@ -46,6 +46,12 @@ public class ClientController {
 
 
 
+    @RequestMapping(value = "/userdata", method = RequestMethod.GET)
+    public String flights(Model model){
+
+        return "personal_data";
+    }
+
 
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public String register(Model model) {
