@@ -14,6 +14,7 @@ public class PasswordEncryptionTest {
 
     @Test
     public void test_encrypt() throws NoSuchAlgorithmException {
+
         String pass = "TravelToCloud";
         String encryptPass = DigestUtils.sha1Hex(pass);
         String encryptPass2 = DigestUtils.sha1Hex(pass);
