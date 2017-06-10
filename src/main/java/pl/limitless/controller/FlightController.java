@@ -13,19 +13,19 @@ import pl.limitless.model.Flight;
 @Controller
 public class FlightController {
 
-    @RequestMapping(value = "/flights", method = RequestMethod.GET)
+    @RequestMapping(value = "flights", method = RequestMethod.GET)
     public String flights(Model model){
         model.addAttribute("flights", new Flight());
         return "flights";
     }
 
-    @RequestMapping(value = "/adminflights", method = RequestMethod.GET)
+    @RequestMapping(value = "adminflights", method = RequestMethod.GET)
     public String adminFlights(Model model){
         model.addAttribute("flights", new Flight());
         return "adminflights";
     }
 
-    @RequestMapping(value = "/userflights", method = RequestMethod.GET)
+    @RequestMapping(value = "userflights", method = RequestMethod.GET)
     public String userflights(Model model){
         model.addAttribute("flights", new Flight());
         return "userflights";
