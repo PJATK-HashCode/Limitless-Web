@@ -8,13 +8,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Lelental on 09.06.2017.
  */
 @Data
 @Entity
-public class Client {
+public class Client  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,6 +48,10 @@ public class Client {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Flight> flights;
+
+    @ManyToMany
+    private Set<Role> roles;
+
 
     public Client() {
     }
