@@ -55,16 +55,15 @@ public class ClientController {
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String createNewClient(@ModelAttribute("clientForm") Client clientForm, BindingResult bindingResult, Model model) {
+    public String register(@ModelAttribute("clientForm") Client clientForm, BindingResult bindingResult, Model model) {
 
-        //clientValidator.validate(clientForm,bindingResult);
+        clientValidator.validate(clientForm,bindingResult);
 
         if (bindingResult.hasErrors()){
             return "register";
         }
         clientRepository.save(clientForm);
 
-        securityService.autologin(clientForm.getEmail(),clientForm.getPassword());
 
         return "redirect:/index";
     }
