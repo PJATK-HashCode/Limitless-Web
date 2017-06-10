@@ -59,7 +59,7 @@ public class ClientController {
         clientValidator.validate(clientForm,bindingResult);
 
         if (bindingResult.hasErrors()){
-            return "registser";
+            return "register";
         }
         clientService.saveClient(clientForm);
 
