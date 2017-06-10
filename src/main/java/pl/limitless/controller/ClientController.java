@@ -59,9 +59,9 @@ public class ClientController {
 
         //clientValidator.validate(clientForm,bindingResult);
 
-        if (bindingResult.hasErrors()){
+       /* if (bindingResult.hasErrors()){
             return "register";
-        }
+        }*/
         clientRepository.save(clientForm);
 
         securityService.autologin(clientForm.getEmail(),clientForm.getPassword());
