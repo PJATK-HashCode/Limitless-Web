@@ -93,7 +93,7 @@ public class ClientRestController {
         List<ClientDisabilitiesDetails> clientDisabilitiesDetailsList = new ArrayList<>();
         ClientDisabilitiesDetails clientDisabilitiesDetails
                 = new ClientDisabilitiesDetails(true, true,true,
-                "To London", "BLind person with dog assistant, always with guide",
+                "To London", "Blind person with dog assistant, always with guide",
                 "paracetamol at 12pm and 16pm");
         clientDisabilitiesDetailsList.add(clientDisabilitiesDetails);
         client.setClientDisabilitiesDetails(clientDisabilitiesDetailsList);
