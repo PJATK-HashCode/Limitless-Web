@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html>
 
 <head>
     <title>Demo</title>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css" th:href="@{/semantic/dist/semantic.min.css}" />
-    <script src="../static/semantic/dist/components/visibility.js" th:src="@{/semantic/dist/components/visibility.js}"></script>
-    <script src="../static/semantic/dist/components/sidebar.js" th:src="@{/semantic/dist/components/sidebar.js}"></script>
-    <script src="../static/semantic/dist/components/transition.js" th:src="@{/semantic/dist/components/transition.js}"></script>
-    <script src="../static/semantic/dist/semantic.min.js" th:src="@{/semantic/dist/semantic.min.js}"></script>
+    <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css"  />
+    <script src="../static/semantic/dist/components/visibility.js" ></script>
+    <script src="../static/semantic/dist/components/sidebar.js" ></script>
+    <script src="../static/semantic/dist/components/transition.js" ></script>
+    <script src="../static/semantic/dist/semantic.min.js" ></script>
 
 
 </head>
@@ -34,35 +33,35 @@
             </h2>
             <div class="four column row">
                 <div class="ten wide column" style="width: 500px;">
-                    <form action="#" th:action="@{/register}"  th:object="${clientForm}" method="POST" th:method="post">
+                    <form action="#"  method="POST">
                     <div class="field input">
                         <label>Name</label>
                         <label>
-                            <input type="text" name="regName" th:field="*{name}"/>
+                            <input type="text" name="regName" />
                         </label>
                     </div>
                     <div class="field input">
                         <label>Surname</label>
                         <label>
-                            <input type="text" th:field="*{lastName}"/>
+                            <input type="text" />
                         </label>
                     </div>
                     <div class="field">
                         <label>Email Address</label>
                         <label>
-                            <input type="email" th:field="*{email}"/>
+                            <input type="email" />
                         </label>
                     </div>
                     <div class="field">
                         <label>Pesel</label>
                         <label>
-                            <input type="number" name="pesel" th:field="*{pesel}"/>
+                            <input type="number" name="pesel" />
                         </label>
                     </div>
                     <div class="field">
                         <label>Password</label>
                         <label>
-                            <input type="password" name="regPassword" th:field="*{password}"/>
+                            <input type="password" name="regPassword"/>
                         </label>
                     </div>
 
