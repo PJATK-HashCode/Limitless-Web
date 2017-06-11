@@ -56,13 +56,13 @@ public class ClientController {
 
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public String register(Model model) {
-        model.addAttribute("clientForm",new Client());
+        model.addAttribute("client",new Client());
 
         return "register";
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String register(@ModelAttribute("clientForm") Client clientForm, BindingResult bindingResult, Model model) {
+    public String register(@ModelAttribute("client") Client clientForm, BindingResult bindingResult, Model model) {
 
         clientValidator.validate(clientForm,bindingResult);
 
