@@ -62,14 +62,14 @@ public class ClientController {
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String register(@ModelAttribute("client") Client clientForm, BindingResult bindingResult, Model model) {
+    public String register(@ModelAttribute("client") Client client, BindingResult bindingResult, Model model) {
 
-        clientValidator.validate(clientForm,bindingResult);
+        clientValidator.validate(client,bindingResult);
 
         if (bindingResult.hasErrors()){
             return "register";
         }
-        clientRepository.save(clientForm);
+        clientRepository.save(client);
 
 
         return "redirect:/index";
