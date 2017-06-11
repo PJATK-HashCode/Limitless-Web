@@ -45,6 +45,12 @@ public class ClientController {
         return "login";
     }
 
+    @RequestMapping(value = "userdata", method = RequestMethod.GET)
+    public String userdata(Model model, String error, String logout) {
+
+
+        return "userdata";
+    }
 
 
 
