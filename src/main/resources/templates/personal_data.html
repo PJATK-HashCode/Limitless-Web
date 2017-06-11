@@ -8,10 +8,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css" th:href="@{/semantic/dist/semantic.min.css}" />
-    <script src="../static/semantic/dist/components/visibility.js" th:src="@{/semantic/dist/components/visibility.js}"></script>
-    <script src="../static/semantic/dist/components/sidebar.js" th:src="@{/semantic/dist/components/sidebar.js}"></script>
-    <script src="../static/semantic/dist/components/transition.js" th:src="@{/semantic/dist/components/transition.js}"></script>
-    <script src="../static/semantic/dist/semantic.min.js" th:src="@{/semantic/dist/semantic.min.js}"></script>
+    <script src="../static/semantic/dist/components/visibility.js" th:href="@{/semantic/dist/components/visibility.js}"></script>
+    <script src="../static/semantic/dist/components/sidebar.js" th:href="@{/semantic/dist/components/sidebar.js}"></script>
+    <script src="../static/semantic/dist/components/transition.js" th:href="@{/semantic/dist/components/transition.js}"></script>
+    <script src="../static/semantic/dist/semantic.min.js" th:href="@{/semantic/dist/semantic.min.js}"></script>
+
 
     <style>
         .headerslot{
@@ -54,7 +55,7 @@
 
                 <div class="ui two column grid">
                     <div class="sixteen wide column">
-                        <h1>TODO imie nazwisko</h1>
+                        <h1>John Reichenbach</h1>
                         <h3>Your profile.</h3>
                     </div>
 
@@ -63,7 +64,7 @@
                         <div class="imageplaceholder five wide column left floated">
                             <div class="image">
                             <div class="ui medium bordered fluid image">
-                                <img src="../static/testimage.jpg"/>
+                                <img src="userimage.jpg">
                             </div>
                             </div>
                         </div>
@@ -78,7 +79,7 @@
 
                                         if (o.tagName === 'TD') {
                                             o.setAttribute('value', o.innerHTML);
-                                            o.innerHTML = '<input type="text" value="' + o.innerHTML + '"/>' +
+                                            o.innerHTML = '<input type="text" value="' + o.innerHTML + '">' +
                                                     '<button class="cancel ui inverted red button right floated">Cancel</button>' +
                                                     '<button class="save ui inverted green button right floated">Save</button>';
 
@@ -94,39 +95,43 @@
 
                                 <tr>
                                     <th style="padding-left: 20px">Name</th>
-                                    <td>TODO NAME</td>
+                                    <td>John</td>
                                 </tr>
                                 <tr>
                                     <th style="padding-left: 20px">Surname</th>
-                                    <td>TODO SURNAME</td>
+                                    <td>Reichenbach</td>
                                 </tr>
                                 <tr>
                                     <th style="padding-left: 20px">Email Address</th>
-                                    <td>TODO ADDRESS</td>
+                                    <td>john.reichenbach@gmail.com</td>
                                 </tr>
                                 <tr>
                                     <th style="padding-left: 20px">Birthday</th>
-                                    <td>TODO BIRTHDAY</td>
+                                    <td>15-03-1954</td>
                                 </tr>
                                 <tr>
                                     <th style="padding-left: 20px">Pesel</th>
-                                    <td>TODO PESEL</td>
+                                    <td>1954031533423</td>
                                 </tr>
                                 <tr>
-                                    <th style="padding-left: 20px">BLANK</th>
-                                    <td>Blank</td>
+                                    <th style="padding-left: 20px">Medicine</th>
+                                    <td>paracetamol 12:00,16:00</td>
                                 </tr>
                                 <tr>
-                                    <th style="padding-left: 20px">BLANK</th>
-                                    <td>Blank</td>
+                                    <th style="padding-left: 20px">Ticket name</th>
+                                    <td>ToLondon</td>
                                 </tr>
                                 <tr>
-                                    <th style="padding-left: 20px">BLANK</th>
-                                    <td>Blank</td>
+                                    <th style="padding-left: 20px">Guide dog</th>
+                                    <td>
+                                        <input type="checkbox" name="example">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th style="padding-left: 20px">BLANK</th>
-                                    <td>Blank</td>
+                                    <th style="padding-left: 20px">Wheel chair</th>
+                                    <td>
+                                        <input type="checkbox" name="example">
+                                    </td>
                                 </tr>
 
                             </table>
