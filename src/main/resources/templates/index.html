@@ -4,12 +4,14 @@
 
 <head>
     <title>Demo</title>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css"  />
-    <script src="../static/semantic/dist/components/visibility.js" ></script>
-    <script src="../static/semantic/dist/components/sidebar.js" ></script>
-    <script src="../static/semantic/dist/components/transition.js" ></script>
-    <script src="../static/semantic/dist/semantic.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="../static/semantic/dist/semantic.min.css" th:href="@{/semantic/dist/semantic.min.css}" />
+    <script src="../static/semantic/dist/components/visibility.js" th:href="@{/semantic/dist/components/visibility.js}"></script>
+    <script src="../static/semantic/dist/components/sidebar.js" th:href="@{/semantic/dist/components/sidebar.js}"></script>
+    <script src="../static/semantic/dist/components/transition.js" th:href="@{/semantic/dist/components/transition.js}"></script>
+    <script src="../static/semantic/dist/semantic.min.js" th:href="@{/semantic/dist/semantic.min.js}"></script>
 
 
 <style type="text/css">
@@ -121,7 +123,7 @@
 <body>
 
 <div id="myheader">
-    <script>$('#myheader').load('header.html');</script>
+    <script>$('#myheader').load('../static/header.html');</script>
 </div>
 
 
@@ -152,7 +154,7 @@
                     <p>Ytodo todo todo todo todo todo  todo todo todo todo todo todo </p>
                 </div>
                 <div class="six wide right floated column">
-                    <img src="../static/headerticket.jpg" class="ui large bordered rounded image"/>
+                    <img src="../static/headerticket.jpg" class="ui large bordered rounded image">
                 </div>
             </div>
         </div>
